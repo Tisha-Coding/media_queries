@@ -1,0 +1,101 @@
+
+                                                                   Media Queries Assignment
+
+
+
+1. What are media queries in CSS and their use case?
+Media queries in CSS are a powerful tool used to apply different styles to a website depending on the device characteristics, such as the screen size, resolution, orientation, or device type. This allows websites to be responsive, meaning they adapt their layout and design based on the screen size of the device accessing the page (mobile, tablet, desktop, etc.).
+
+A media query checks the conditions you specify, and if those conditions are met, the corresponding CSS styles are applied.
+
+Use case:
+
+Media queries are commonly used for responsive web design, ensuring that websites look good on various screen sizes.
+Example: Applying different styles for mobile devices (smaller screens) and desktops (larger screens).
+Example:
+
+css
+code
+/* Apply these styles when the screen width is 768px or smaller */
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+/* Apply these styles when the screen width is larger than 768px */
+@media (min-width: 769px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+In this example, the background color will change depending on the width of the device's screen.
+
+2. Difference between min-width and max-width in media queries in CSS
+min-width: This media query applies styles when the screen width is greater than or equal to the specified value. It's often used for defining styles for larger screens (e.g., tablets, desktops).
+
+Example:
+
+css
+code
+@media (min-width: 600px) {
+  body {
+    font-size: 18px;
+  }
+}
+Here, the font size will be 18px for screens that are 600px wide or larger.
+
+max-width: This media query applies styles when the screen width is less than or equal to the specified value. It’s typically used to adjust styles for smaller screens, such as mobile devices.
+
+Example:
+
+css
+code
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+In this case, the font size will be 14px for screens that are 600px wide or smaller.
+
+Key difference:
+
+min-width targets larger screens or styles for expanding layouts.
+max-width targets smaller screens or styles for collapsing layouts.
+3. Explain float property and clear property in CSS with examples
+Float property:
+The float property in CSS is used to position an element to the left or right of its container, allowing other content (like text or images) to flow around it. It’s often used for creating simple layouts like floating an image next to text or arranging elements horizontally.
+
+Example:
+
+css
+code
+/* Float the image to the left of the text */
+img {
+  float: left;
+  margin-right: 10px;
+}
+html
+code
+<img src="image.jpg" alt="Image description" />
+<p>This text will flow around the floated image.</p>
+In this example, the image is floated to the left, and the text will wrap around it.
+
+Clear property:
+The clear property is used to prevent elements from floating around other floated elements. It specifies whether an element should be moved below floated elements that precede it.
+
+Example:
+
+css
+code
+/* Clear the floating effect, so the footer doesn't wrap around the floated image */
+footer {
+  clear: both; /* or clear: left/right */
+}
+html
+code
+<img src="image.jpg" alt="Image description" style="float: left;" />
+<p>This text will flow around the floated image.</p>
+<footer>This footer is below the image and the text.</footer>
+Without the clear property, the footer might wrap around the floated image, but with clear: both, the footer is pushed below the floated content.
+
